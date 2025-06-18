@@ -392,7 +392,8 @@ def sync(
                     )
         # Copy our versions of sync and push paths into the Overleaf project
         for sync_push_path in sync_paths + push_paths:
-            src = os.path.join(wdir, sync_push_path)
+            wdir_windows = wdir.replace("/","\\")
+            src = os.path.join(wdir_windows, sync_push_path)
             dst = os.path.join(overleaf_project_dir, sync_push_path)
             if os.path.isdir(src):
                 # Remove destination directory if it exists
