@@ -396,6 +396,7 @@ def sync(
                     ["git", "apply", "--reject", "--directory", wdir, "-"],
                     input=diff,
                     text=True,
+                    encoding="utf-8"
                 )
                 if process.returncode != 0:
                     if force:
